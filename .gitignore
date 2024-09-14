@@ -1,0 +1,9 @@
+book.sqlite
+venv/
+__pycahce__/
+*.pyc
+*.pyo
+.vscode
+.DS_Store
+.env
+migrations/
