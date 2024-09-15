@@ -13,7 +13,7 @@ import os
 # Flask
 app = Flask(__name__)
 CORS(app, supports_credentials=True)
-app.config['SECRET_KEY'] = '\x14B~^\x07\xe1\x197\xda\x18\xa6[[\x05\x03QVg\xce%\xb2<\x80\xa4\x00'
+app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
 app.config['DEBUG'] = True
 migrate = Migrate(app, db)
 

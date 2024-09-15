@@ -18,7 +18,7 @@ def token_required(f):
 
         try:
             data = jwt.decode(token, SECRET_KEY, algorithms=['HS256'])
-            current_user = User.query.filter_by(id=data['sub']).first()
+            current_user = User.query.filter_by(id=data['user_id']).first()
         except jwt.ExpiredSignatureError:
             return jsonify({'message': 'Authorization Failed', 'success': False}), 401
         except jwt.InvalidTokenError:
